@@ -17,6 +17,8 @@ public interface StocksRepository extends CrudRepository<StocksModel, String> {
     @Override
     Optional<StocksModel> findById(String s);
 
+    Optional<StocksModel> findBySymbol(String symbol);
+
     @Query("Select c from StocksModel c WHERE c.idStocks = :idStocks AND c.dateTime <= :data ORDER BY c.dateTime DESC")
     List<StocksModel> listByStocksData (
             @Param("idStocks") String idStocks,

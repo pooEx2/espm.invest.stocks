@@ -33,6 +33,10 @@ public class StocksResource implements StocksController{
         return stocksService.listAll();
     }
 
+    @Override
+    public List<Stocks> stocks(String id, String symbol, String name) {
+        return stocksService.listBy(id, symbol, name);
+    }
 
     @Override
     public Stocks stocks(String symbol) {

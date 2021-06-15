@@ -31,6 +31,13 @@ public class StocksService {
                 .orElse(null);
     }
 
+    public List<Stocks> listBy(String idStocks, String symbolStocks, String nameStocks) {
+        return stocksRepository
+                .listBy(idStocks, symbolStocks, nameStocks).stream()
+                .map(StocksModel::to)
+                .collect(Collectors.toList());
+    }
+
     public Stocks findBySymbol(String symbol) {
         return stocksRepository
                 .findBySymbol(symbol)

@@ -1,10 +1,11 @@
 package br.espm.poo1.stocks;
 
-import br.espm.poo1.stocks.common.datatype.Price;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
+@Repository
 public interface PriceRepository extends CrudRepository<PriceModel, String> {
 
     @Override

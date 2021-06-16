@@ -29,7 +29,7 @@ public class PriceModel {
 
     public PriceModel(Price p) {
         this.idPrice = p.getId();
-        this.idStocks = p.getIdStocks().getId();
+        this.idStocks = p.getStocks().getId();
         this.dtDate = p.getDate();
         this.nrValue = p.getValue();
     }
@@ -40,7 +40,7 @@ public class PriceModel {
 
         Price p = new Price();
         p.setId(idPrice);
-        p.setIdStocks(s);
+        p.setStocks(s);
         p.setDate(dtDate);
         p.setValue(nrValue);
         return p;

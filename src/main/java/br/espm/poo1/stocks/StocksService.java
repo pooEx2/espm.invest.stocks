@@ -4,7 +4,6 @@ import br.espm.poo1.stocks.common.datatype.Stocks;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
@@ -29,13 +28,6 @@ public class StocksService {
                 .findById(id.toString())
                 .map(StocksModel::to)
                 .orElse(null);
-    }
-
-    public List<Stocks> listBy(String idStocks, String symbolStocks, String nameStocks) {
-        return stocksRepository
-                .listBy(idStocks, symbolStocks, nameStocks).stream()
-                .map(StocksModel::to)
-                .collect(Collectors.toList());
     }
 
     public Stocks findBySymbol(String symbol) {
